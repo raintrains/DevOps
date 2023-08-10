@@ -20,5 +20,5 @@ jobs:
     
         - name: Build and push docker image
           run: |
-            docker build -t raintrains/devops/flask_app:latest .
+            docker build -t raintrains/devops/flask_app:latest -f raintrains/DevOps/
             docker push raintrains/devops/flask_app:latest
