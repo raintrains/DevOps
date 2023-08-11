@@ -25,11 +25,11 @@ jobs:
         id: meta
         uses: docker/metadata-action@v1
         with:
-          images: raintrains/flask_app:${{ github.sha.short }}
+          images: raintrains/flask_app:${{ github.sha }}.SubString(0, 7)
 
       - name: Build & push to DockerHub
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tags: raintrains/flask_app:${{ github.sha.short }}
+          tags: raintrains/flask_app:${{ github.sha }}.SubString(0, 7)
